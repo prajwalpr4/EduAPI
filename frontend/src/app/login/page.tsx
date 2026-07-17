@@ -24,8 +24,8 @@ export default function LoginPage() {
       login(token, userData);
       window.location.href = '/';
     } catch (err: unknown) {
-      if (err instanceof AxiosError && err.response?.data?.message) {
-        setError(err.response.data.message);
+      if (err instanceof AxiosError) {
+        setError(err.response?.data?.message || err.message || 'Network connection failed.');
       } else {
         setError('An unexpected error occurred. Please try again.');
       }
