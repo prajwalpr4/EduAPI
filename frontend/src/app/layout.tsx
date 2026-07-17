@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./providers";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "EduAPI | Student Management System",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased bg-gray-50 text-gray-900">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
